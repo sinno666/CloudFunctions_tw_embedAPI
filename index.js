@@ -1,5 +1,6 @@
 const axios = require('axios');
 const escapeHtml = require('escape-html');
+const cors = require('cors')({ origin: true });
 //  httpでリクエスト送るとidをembedAPIに渡して、返ってきたhtmlをリターンする
 // httpでreqがくる→reqのidをembedAPIに渡す
 // embedAPIの中でhtmlが返ってきたらresにつけて返す
@@ -20,16 +21,9 @@ async function getEmbedHtml(v) {
   }
 }
 
-/**
- * HTTP Cloud Function.
- *
- * @param {Object} req Cloud Function request context.
- *                     More info: https://expressjs.com/en/api.html#req
- * @param {Object} res Cloud Function response context.
- *                     More info: https://expressjs.com/en/api.html#res
- */
-
-exports.helloHttp = async (req, res) => {
-  const embedHtml = await getEmbedHtml(req.query.id)
-  await res.send(embedHtml);
+exports.tw_embedHTML = (req, res) => {
+  cors(req, res, async () => {
+    const embedHtml = await getEmbedHtml(req.query.id)
+    await res.send(embedHtml);
+  })
 };

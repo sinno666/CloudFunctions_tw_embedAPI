@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx functions-framework --target=helloHttp"
+    "start": "npx functions-framework --target=tw_embedHTML"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "cors": "^2.8.5",
     "escape-html": "^1.0.3"
   },
   "devDependencies": {
