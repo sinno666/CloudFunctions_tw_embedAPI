@@ -1,0 +1,19 @@
+{
+  "name": "embed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx functions-framework --target=helloHttp"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "escape-html": "^1.0.3"
+  },
+  "devDependencies": {
+    "@google-cloud/functions-framework": "^1.7.1"
+  }
+}
